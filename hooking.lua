@@ -1,16 +1,11 @@
 #include "mods/modloader.lua"
 
 GHooks = {}
-GHooks.uiTick = {}
 
-function addHookUiTick(fnc) 
-    table.insert(GHooks.uiTick, fnc)
-end
-
-function getUiTickHooksCount()
-    return table.getn(GHooks.uiTick)
-end
-
-function getUiHooks() 
-    return GHooks.uiTick
+function addHook(file, fname, fnc) 
+    local functionHookName = "mod_"..file.."_"..fname
+    if not GHooks[functionHookName] then
+        GHooks[functionHookName] = {}
+    end
+    table.insert(GHooks[functionHookName], fnc)
 end

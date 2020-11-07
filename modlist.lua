@@ -1,1 +1,1 @@
-#include "mods/tickmsg.lua" --Nexus Injector
+#include "mods/ticktack/tickmsg.lua" --Nexus Injector
